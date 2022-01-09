@@ -1,14 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello jocelyn daublas</h1>
+      <header className="headerInfo" id="header-bar">
+        FourSeasons Weather
       </header>
     </div>
   );
 }
 
-export default App;
