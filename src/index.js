@@ -3,17 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CityForecast from './CityForecast';
-import Form from "./Form";
-import Footer from "./Footer";
+
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <CityForecast />
-    <Form />
-    <Footer />
-
   </React.StrictMode>,
   document.getElementById('root')
 );

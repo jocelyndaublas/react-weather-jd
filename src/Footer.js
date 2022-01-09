@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div>
             <footer>
-                Coded by Jocelyn Daublas and is open source on<a href="https://github.com/jocelyndaublas/four-seasons-weather-app">
+                Coded by Jocelyn Daublas and is open source on       <a href="https://github.com/jocelyndaublas/four-seasons-weather-app">
                     github
                 </a>
             </footer>
