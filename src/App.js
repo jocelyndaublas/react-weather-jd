@@ -1,6 +1,6 @@
 import "./App.css";
 import CityForecast from './CityForecast';
-import Form from "./Form";
+import SearchForm from "./SearchForm";
 import Footer from "./Footer";
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
       <header className="headerInfo" id="header-bar">
         FourSeasons Weather
       </header>
-      <Form />
+      < SearchForm defaultCity="edmonton"/>
       <CityForecast />
 
       <Footer />
