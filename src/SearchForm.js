@@ -3,7 +3,7 @@ import axios from "axios";
 import CityForecast from "./CityForecast";
 
 
-export default function searchForm(props) {
+export default function SearchForm(props){
     const[weatherData, setWeatherData]= useState({ready:false});
     const[city, setCity]= useState(props.defaultCity);
   
@@ -12,17 +12,18 @@ export default function searchForm(props) {
             ready: true,
             temperature: response.data.main.temp,
             wind: response.data.wind.speed,
-            city: response.data.name,
+            name: response.data.name,
+            date: new Date(response.data.dt*1000),
             humidity: response.data.main.humidity,
-            iconUrl:  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
             description:response.data.weather[0].description,
         });
       }
 
     function handleSubmit(event) {
         event.preventDefault();
-        
+        search();
     }
+
     function handleCity(event){
         setCity(event.target.value);
     }
@@ -36,9 +37,7 @@ if(weatherData.ready){
     return(
     <div>
         <form onSubmit={handleSubmit}>
-            <input type="search" placeholder="search city..." onChnage={handleCity}></input>
-        </form>
-        <form>
+            <input type="search" placeholder="search city..." onChange={handleCity}></input>
             <input type="submit" value="search">
             </input>
         </form>
@@ -48,7 +47,6 @@ if(weatherData.ready){
     search();
         return "Loading...";
       }
-      
 }
   
 
