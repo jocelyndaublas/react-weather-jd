@@ -16,21 +16,20 @@ export default function SearchForm(props){
             date: new Date(response.data.dt*1000),
             humidity: response.data.main.humidity,
             description:response.data.weather[0].description,
+            iconUrl:` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
         });
       }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        search();
-    }
-
-    function handleCity(event){
-        setCity(event.target.value);
-    }
 function search(){
     const apiKey ="ca5da085c3334fa2974d520a9a4b8c12"
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(getWeather);
+}
+function handleCity(event){
+    setCity(event.target.value);
+}
+function handleSubmit(event) {
+    event.preventDefault();
+    search();
 }
   
 if(weatherData.ready){
@@ -45,7 +44,7 @@ if(weatherData.ready){
       </div>);
 } else{
     search();
-        return "Loading...";
+    return ("Loading...")
       }
 }
   

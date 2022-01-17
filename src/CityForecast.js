@@ -6,11 +6,11 @@ export default function CityForecast(props) {
     return (
         <section>
             <div>
-                <h1 id="current-city">{props.name}</h1>
+                <h1 id="current-city">{props.data.name}</h1>
                 <ul>
                     <li className="temperatureInfo">
                         {" "}
-                        <span id="current-temperature">{props.temperature} </span>
+                        <span id="current-temperature">{Math.round(props.data.temperature)} </span>
                         <span>
                             <a href="/"id="celsius" className="unit" >
                                 °C |
@@ -21,20 +21,22 @@ export default function CityForecast(props) {
                             </a>
                         </span>
                     </li>
-                    
                     <li className="temperatureInfo" >
-                    {props.description}
+                    {props.data.description}
+                    </li>
+                    <li className="temperatureInfo" >
+                    {Math.round(props.data.wind)}KM per hour
                     </li>
                     <li className="temperatureInfo">
-                        <strong>Humidity</strong>{props.humidity}:%
+                        <strong>Humidity</strong>{props.data.humidity}:%
+                    </li>
+                    <li className="temperatureInfo" >
+                   <img src={props.data.iconUrl}></img> 
                     </li>
                     <li className="temperatureInfo">
                         <strong className="temperatureInfo" >
-                        <FormattedDate date={props.date}/>
-                        </strong>{" "}
-                        <span className="temperatureInfo" id="current-time">
-                            10:11
-                        </span>
+                        <FormattedDate date={props.data.date}/>
+                        </strong>
                     </li>
                 </ul>
             </div>
