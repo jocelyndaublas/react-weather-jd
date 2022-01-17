@@ -1,6 +1,7 @@
 import React from "react";
 import "./cityForecast.css";
 import FormattedDate from "./FormtattedDate";
+import WeatherTemp from "./WeatherTemp";
 
 export default function CityForecast(props) {
     return (
@@ -9,18 +10,7 @@ export default function CityForecast(props) {
                 <h1 id="current-city">{props.data.name}</h1>
                 <ul>
                     <li className="temperatureInfo">
-                        {" "}
-                        <span id="current-temperature">{Math.round(props.data.temperature)} </span>
-                        <span>
-                            <a href="/"id="celsius" className="unit" >
-                                °C |
-                            </a>
-                            <a href="/" id="fahrenheit" className="unit" >
-                                {" "}
-                                °F
-                            </a>
-                        </span>
-                    </li>
+                        <WeatherTemp celsius={props.data.temperature}/> </li>
                     <li className="temperatureInfo" >
                     {props.data.description}
                     </li>
@@ -31,7 +21,7 @@ export default function CityForecast(props) {
                         <strong>Humidity</strong>{props.data.humidity}:%
                     </li>
                     <li className="temperatureInfo" >
-                   <img src={props.data.iconUrl}></img> 
+                   <img src={props.data.iconUrl} alt="descriptive weather icon"></img> 
                     </li>
                     <li className="temperatureInfo">
                         <strong className="temperatureInfo" >
