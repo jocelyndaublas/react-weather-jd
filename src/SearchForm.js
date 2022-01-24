@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CityForecast from "./CityForecast";
+import WeeklyForecast from "./WeeklyForecast";
 
 
 export default function SearchForm(props){
@@ -10,17 +11,18 @@ export default function SearchForm(props){
     function getWeather(response) {
         setWeatherData({
             ready: true,
+            coordinates:response.data.coord,
             temperature: response.data.main.temp,
             wind: response.data.wind.speed,
             name: response.data.name,
             date: new Date(response.data.dt*1000),
             humidity: response.data.main.humidity,
             description:response.data.weather[0].description,
-            iconUrl:` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+            icon: response.data.weather[0].icon,
         });
       }
 function search(){
-    const apiKey ="ca5da085c3334fa2974d520a9a4b8c12"
+    const apiKey ="c69faf9d2df6cf97f08634b08792a39d";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(getWeather);
 }
@@ -41,6 +43,7 @@ if(weatherData.ready){
             </input>
         </form>
         < CityForecast data={weatherData} />
+        < WeeklyForecast coordinates={weatherData.coordinates}/>
       </div>);
 } else{
     search();

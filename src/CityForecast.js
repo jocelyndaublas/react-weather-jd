@@ -2,6 +2,7 @@ import React from "react";
 import "./cityForecast.css";
 import FormattedDate from "./FormtattedDate";
 import WeatherTemp from "./WeatherTemp";
+import WeatherIcon from "./WeatherIcon";
 
 export default function CityForecast(props) {
     return (
@@ -21,7 +22,7 @@ export default function CityForecast(props) {
                         <strong>Humidity</strong>{props.data.humidity}:%
                     </li>
                     <li className="temperatureInfo" >
-                   <img src={props.data.iconUrl} alt="descriptive weather icon"></img> 
+                   <WeatherIcon code={props.data.icon} size={52}/>
                     </li>
                     <li className="temperatureInfo">
                         <strong className="temperatureInfo" >
