@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import CityForecast from "./CityForecast";
 import WeeklyForecast from "./WeeklyForecast";
+import "./searchform.css";
+
 
 
 export default function SearchForm(props){
@@ -36,10 +38,10 @@ function handleSubmit(event) {
   
 if(weatherData.ready){
     return(
-    <div>
+    <div className= "searchForm">
         <form onSubmit={handleSubmit}>
-            <input type="search" placeholder="search city..." onChange={handleCity}></input>
-            <input type="submit" value="search">
+            <input type="search" placeholder="search city..." className="form" onChange={handleCity}></input>
+            <input type="submit" value="search" className="searchInput">
             </input>
         </form>
         < CityForecast data={weatherData} />

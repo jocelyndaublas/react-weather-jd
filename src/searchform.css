@@ -1,0 +1,12 @@
+.searchInput {
+  margin-left: 10px;
+  background-color: #83a18f;
+  color: black;
+  border: 1px solid #83a18f;
+  border-radius: 3px;
+  font-family: raleway;
+}
+.form {
+  border: 1px solid #83a18f;
+  border-radius: 3px;
+}

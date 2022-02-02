@@ -19,16 +19,17 @@ export default function CityForecast(props) {
                     {Math.round(props.data.wind)}KM per hour
                     </li>
                     <li className="temperatureInfo">
-                        <strong>Humidity</strong>{props.data.humidity}:%
-                    </li>
-                    <li className="temperatureInfo" >
-                   <WeatherIcon code={props.data.icon} size={52}/>
+                        <strong>Humidity</strong>{" "}{props.data.humidity}:%
                     </li>
                     <li className="temperatureInfo">
                         <strong className="temperatureInfo" >
                         <FormattedDate date={props.data.date}/>
                         </strong>
                     </li>
+                    <li className="temperatureInfo" >
+                   <WeatherIcon code={props.data.icon} size={52}/>
+                    </li>
+                    
                 </ul>
             </div>
         </section>

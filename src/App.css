@@ -2,10 +2,18 @@
   background-color: #ffaaa5;
   width: 100%;
   margin: 0;
+  margin-bottom: 20px;
   padding: 15px;
+  border-radius: 5px;
   text-align: center;
   font-size: 1.5rem;
   font-family: raleway;
   font-weight: bolder;
   color: #698474;
+}
+.App {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+  align-items: center;
 }
